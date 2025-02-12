@@ -157,7 +157,7 @@ int Dey(int dey1, int month1, int year1, int dey2, int month2, int year2)
 
 
 
-float average(int arr[], int len)
+float Average(int arr[], int len)
 {
     float summ = 0;
     for (int i = 0; i < len; i++)
@@ -170,12 +170,12 @@ float average(int arr[], int len)
 
 
 
-int Print(int arr[], int std) 
+float Print(int arr[], int len) 
 {
     int plus = 0;
     int minus = 0;
     int zero = 0;
-    for (int i = 0; i < std; i++)
+    for (int i = 0; i < len; i++)
     {
         if (arr[i] > 0)
         {
@@ -189,9 +189,10 @@ int Print(int arr[], int std)
             zero++;
         }
     }
-    std::cout << "The number of positive elements = " << plus << "\n";
-    std::cout << "The number of negative elements = " << minus << "\n";
-    std::cout << "The number of zero elements = " << zero << "\n";
+    std::cout << "The number of positive number = " << plus << "\n";
+    std::cout << "The number of negative number = " << minus << "\n";
+    std::cout << "The number of zero number = " << zero << "\n";
+    return plus;
 }
 
 
@@ -199,36 +200,33 @@ int main()
 {
     setlocale(LC_ALL, "ru");
 
-    // ¹ 1
+    // â„– 1
     int dey1, month1, year1, dey2, month2, year2;
-    std::cout << "ââåäèòå äåíü, ìåñÿö è ãîä ó ïåğâîé äàòû \n";
+    std::cout << "Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ´ĞµĞ½ÑŒ, Ğ¼ĞµÑÑÑ† Ğ¸ Ğ³Ğ¾Ğ´ Ñƒ Ğ¿ĞµÑ€Ğ²Ğ¾Ğ¹ Ğ´Ğ°Ñ‚Ñ‹ \n";
     std::cin >> dey1;
     std::cin >> month1;
     std::cin >> year1;
-    std::cout << "ââåäèòå äåíü, ìåñÿö è ãîä ó âòîğîé äàòû \n";
+    std::cout << "Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ´ĞµĞ½ÑŒ, Ğ¼ĞµÑÑÑ† Ğ¸ Ğ³Ğ¾Ğ´ Ñƒ Ğ²Ñ‚Ğ¾Ñ€Ğ¾Ğ¹ Ğ´Ğ°Ñ‚Ñ‹ \n";
     std::cin >> dey2;
     std::cin >> month2;
     std::cin >> year2;
-    std::cout << "ğàçíèöà â äíÿõ ğàâíà " << Dey(dey1, month1, year1, dey2, month2, year2) << "\n";
+    std::cout << "Ñ€Ğ°Ğ·Ğ½Ğ¸Ñ†Ğ° Ğ² Ğ´Ğ½ÑÑ… Ñ€Ğ°Ğ²Ğ½Ğ° " << Dey(dey1, month1, year1, dey2, month2, year2) << "\n";
 
 
-    // ¹ 2
-    int arr[] = { 1, 2, 3, 4, 5 };
+    // â„– 2
+    int mas[] = { 1, 2, 3, 4, 5 };
     int len = 5;
-    std::cout << average(arr, len);
+    std::cout << "ÑÑ€ĞµĞ´Ğ½ĞµĞµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ = " << Average(mas, len);
     return 0;
 
 
-    // ¹ 3
+    // â„– 3
 
     int arr[] = { -1, 400, -3, 5, 0, -4, -2};
-
-    std::cout << " " << Print(arr, 6) << "\n";
+    int lin = 6;
+    std::cout << " " << Print(arr, lin) << "\n";
 
 
 
     return 0;
 }
-
-
-
