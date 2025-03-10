@@ -210,12 +210,12 @@ int main()
     int mas[] = { 1, 2, 3, 4, 5 };
     int len = 5;
     std::cout << "среднее значение = " << Average(mas, len);
-    return 0;
+ 
 
 
     // № 3
     int dey1, month1, year1, dey2, month2, year2;
-    std::cout << "введите день, месяц и год у первой даты \n";
+    std::cout << "\nвведите день, месяц и год у первой даты \n";
     std::cin >> dey1;
     std::cin >> month1;
     std::cin >> year1;
