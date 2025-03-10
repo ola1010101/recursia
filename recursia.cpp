@@ -201,19 +201,6 @@ int main()
     setlocale(LC_ALL, "ru");
 
     // № 1
-    int arr[] = { -1, 400, -3, 5, 0, -4, -2};
-    int lin = 6;
-    std::cout << " " << Print(arr, lin) << "\n";
-
-  
-    // № 2
-    int mas[] = { 1, 2, 3, 4, 5 };
-    int len = 5;
-    std::cout << "среднее значение = " << Average(mas, len);
- 
-
-
-    // № 3
     int dey1, month1, year1, dey2, month2, year2;
     std::cout << "\nвведите день, месяц и год у первой даты \n";
     std::cin >> dey1;
@@ -224,7 +211,19 @@ int main()
     std::cin >> month2;
     std::cin >> year2;
     std::cout << "разница в днях равна " << Dey(dey1, month1, year1, dey2, month2, year2) << "\n";
+  
+    // № 2
+    int mas[] = { 1, 2, 3, 4, 5 };
+    int len = 5;
+    std::cout << "среднее значение = " << Average(mas, len);
+ 
 
+
+    // № 3
+   
+    int arr[] = { -1, 400, -3, 5, 0, -4, -2};
+    int lin = 6;
+    std::cout << " " << Print(arr, lin) << "\n";
 
     return 0;
 }
