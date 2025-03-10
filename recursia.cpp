@@ -1,229 +1,168 @@
 
-#include <iostream> 
+#include<iostream>
 #include<cstdlib>
-
-
-int Dey(int dey1, int month1, int year1, int dey2, int month2, int year2)
-{
-    int dey = 0, colihc = 0;
-        if (year1 % 4 == 0)
-        {
-            colihc = year1 / 4;
-            dey1 = dey1 + year1 * 365 + colihc - 366;
-            std::cout << year1 << "leap year\n";
-
-        }
-        else
-        {
-            dey1 = dey1 + year1 * 365 - 365;
-        }
-
-        if (month1 == 2)
-        {
-            dey1 = dey1 + 31;
-        }
-
-        if (month1 == 3)
-        {
-            dey1 = dey1 + 31 + 28;
-        }
-
-        if (month1 == 4)
-        {
-            dey1 = dey1 + 2 * 31 + 28;
-        }
-
-        if (month1 == 5)
-        {
-            dey1 = dey1 + 2 * 31 + 28 + 30;
-        }
-
-        if (month1 == 6)
-        {
-            dey1 = dey1 + 3 * 31 + 28 + 30;
-        }
-
-        if (month1 == 7)
-        {
-            dey1 = dey1 + 3 * 31 + 28 + 2 * 30;
-        }
-
-        if (month1 == 8)
-        {
-            dey1 = dey1 + 4 * 31 + 28 + 2 * 30;
-        }
-
-        if (month1 == 9)
-        {
-            dey1 = dey1 + 5 * 31 + 28 + 2 * 30;
-        }
-
-        if (month1 == 10)
-        {
-            dey1 = dey1 + 5 * 31 + 28 + 3 * 30;
-        }
-
-        if (month1 == 11)
-        {
-            dey1 = dey1 + 6 * 31 + 28 + 3 * 30;
-        }
-
-        if (month1 == 12)
-        {
-            dey1 = dey1 + 6 * 31 + 28 + 4 * 30;
-        }
-        if (year1 % 4 == 0 and month1 >= 3)
-        {
-            dey1++;
-        }
-
-
-
-        if (year2 % 4 == 0)
-        {
-            colihc = year2 / 4;
-            dey2 = dey2 + year2 * 365 + colihc - 366;
-            std::cout << year2 << "leap year\n";
-
-        }
-        else
-        {
-            dey2 = dey2 + year2 * 365 - 365;
-        }
-
-        if (month2 == 2 )
-        {
-            dey2 = dey2 + 31;
-        }
-
-        if (month2 == 3 )
-        {
-            dey2 = dey2 + 31 + 28;
-        }
-
-        if (month2 == 4)
-        {
-            dey2 = dey2 + 2 * 31 + 28;
-        }
-
-        if (month2 == 5)
-        {
-            dey2 = dey2 + 2 * 31 + 28 + 30;
-        } 
-        
-        if (month2 == 6)
-        {
-            dey2 = dey2 + 3 * 31 + 28 + 30;
-        }
-        
-        if (month2 == 7)
-        {
-            dey2 = dey2 + 3 * 31 + 28 + 2 * 30;
-        } 
-        
-        if (month2 == 8)
-        {
-            dey2 = dey2 + 4 * 31 + 28 + 2 * 30;
-        }
-        
-        if (month2 == 9)
-        {
-            dey2 = dey2 + 5 * 31 + 28 + 2 * 30;
-        }
-
-        if (month2 == 10)
-        {
-            dey2 = dey2 + 5 * 31 + 28 + 3 * 30;
-        }
-        
-        if (month2 == 11)
-        {
-            dey2 = dey2 + 6 * 31 + 28 + 3 * 30;
-        } 
-        
-        if (month2 == 12)
-        {
-            dey2 = dey2 + 6 * 31 + 28 + 4 * 30;
-        }
-        if (year2 % 4 == 0 and month2>=3 )
-        {
-            dey2++;
-        }
-
-        dey = dey2 - dey1;
-
-        return dey;
-}
-
-
-
-float Average(int arr[], int len)
-{
-    float summ = 0;
-    for (int i = 0; i < len; i++)
-    {
-        summ = arr[i] + summ;
-    }
-    return summ / len;
-}
-
-
-
-
-float Print(int arr[], int len) 
-{
-    int plus = 0;
-    int minus = 0;
-    int zero = 0;
-    for (int i = 0; i < len; i++)
-    {
-        if (arr[i] > 0)
-        {
-            plus++;
-        }
-        else if (arr[i] < 0)
-        {
-            minus++;
-        }
-        else {
-            zero++;
-        }
-    }
-    std::cout << "The number of positive number = " << plus << "\n";
-    std::cout << "The number of negative number = " << minus << "\n";
-    std::cout << "The number of zero number = " << zero << "\n";
-    return plus;
-}
+#include <ctime>
+#include <vector>
 
 
 int main()
 {
     setlocale(LC_ALL, "ru");
 
-    // № 1
-    int dey1, month1, year1, dey2, month2, year2;
-    std::cout << "\nвведите день, месяц и год у первой даты \n";
-    std::cin >> dey1;
-    std::cin >> month1;
-    std::cin >> year1;
-    std::cout << "введите день, месяц и год у второй даты \n";
-    std::cin >> dey2;
-    std::cin >> month2;
-    std::cin >> year2;
-    std::cout << "разница в днях равна " << Dey(dey1, month1, year1, dey2, month2, year2) << "\n";
-  
-    // № 2
-    int mas[] = { 1, 2, 3, 4, 5 };
-    int len = 5;
-    std::cout << "среднее значение = " << Average(mas, len);
- 
+    //1
+    std::cout << "Введите 5 чисел:";
+
+    int arr[5];
+    for (int i = 0; i < 5; i++)
+    {
+        std::cin >> arr[i];
+    }
+    int max = arr[0];
+    int min = arr[0];
+    for (int i = 0; i < 5; i++)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+        if (arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    std::cout << "\n" << "Max: " << max << "\n" << "Min: " << min;
+    system("pause");
 
 
-    // № 3
-   
-    int arr[] = { -1, 400, -3, 5, 0, -4, -2};
-    int lin = 6;
-    std::cout << " " << Print(arr, lin) << "\n";
+
+    system("cls");
+
+
+
+
+    //2
+
+    int kolich, lower, upper, threshold;
+    std::cout << "Введите количество элементов в массиве: ";
+    std::cin >> kolich;
+
+    std::cout << "Введите нижнюю границу диапазона: ";
+    std::cin >> lower;
+
+    std::cout << "Введите верхнюю границу диапазона: ";
+    std::cin >> upper;
+
+    std::cout << "Введите значение порога (элементы меньше этого будут суммироваться): ";
+    std::cin >> threshold;
+    std::srand(static_cast<unsigned int>(std::time(0)));
+
+    std::vector<int> array(kolich);
+    int sum = 0;
+    for (int i = 0; i < kolich; ++i) {
+        array[i] = std::rand() % (upper - lower + 1) + lower; 
+        if (array[i] < threshold) {
+            sum += array[i];  
+        }
+    }
+    std::cout << "Сгенерированный массив: ";
+    for (int i = 0; i < kolich; ++i) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "Сумма элементов, меньших " << threshold << ": " << sum << std::endl;
+
+
+
+   //3
+
+    const int month{ 12 };
+    int income[month]{ 1,2,3,4,5,6,7,8,9,10,11,12 };
+    int monthStart{ 0 };
+    int monthEnd{ 0 };
+
+    for (int i{ 0 }; i < month; ++i)
+    {
+        std::cout << "Доход за: ";
+
+        if (i == 0)
+        {
+            std::cout << "\n" << "January: ";
+        }
+        else if (i == 1)
+        {
+            std::cout << "February: ";
+        }
+        else if (i == 2)
+        {
+            std::cout << "March: ";
+        }
+        else if (i == 3)
+        {
+            std::cout << "April: ";
+        }
+        else if (i == 4)
+        {
+            std::cout << "May: ";
+        }
+        else if (i == 5)
+        {
+            std::cout << "June: ";
+        }
+        else if (i == 6)
+        {
+            std::cout << "July: ";
+        }
+        else if (i == 7)
+        {
+            std::cout << "August: ";
+        }
+        else if (i == 8)
+        {
+            std::cout << "September: ";
+        }
+        else if (i == 9)
+        {
+            std::cout << "October: ";
+        }
+        else if (i == 10)
+        {
+            std::cout << "November: ";
+        }
+        else
+        {
+            std::cout << "December: ";
+        }
+
+        std::cin >> income[i];
+    }
+    std::cout << "\nВведите диапазон за который вы бы хотели посмотреть доход:\n";
+    std::cout << "Введите первый месяц: ";
+    std::cin >> monthStart;
+    std::cout << "Введите последний месяц: ";
+    std::cin >> monthEnd;
+
+
+
+    monthStart--;
+
+    int maxI{ monthStart };
+    int minI{ monthStart };
+
+    for (int i{ monthStart }; i < monthEnd; ++i)
+    {
+
+        if (income[i] > income[maxI])
+        {
+            maxI = i;
+        }
+        else if (income[i] < income[minI])
+        {
+            minI = i;
+        }
+    }
+
+    std::cout << "\nМинимум: " << minI + 1 << '\n';
+    std::cout << "Максимум: " << maxI + 1 << '\n';
 
     return 0;
 }
